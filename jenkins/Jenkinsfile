@@ -1,5 +1,11 @@
 pipeline {
     agent any
+        environment{
+        DOCKERHUB_CREDENCIALS = credentials ('dockerhub')
+        RepoDockerHub = 'zdenkoo98'
+        NameContainer = 'pokedex-flask'
+    }
+
     stages {
         stage('Build'){
             steps{
